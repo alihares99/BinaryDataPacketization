@@ -27,13 +27,13 @@ private:
         int packet_size = -1;
         bdp->GetPacket(RawData, RawDataSize, packet_to_send, packet_size);
 
-        QCOMPARE_GE(packet_size, 0); // check the size greater than 0
+        QVERIFY(packet_size >= 0); // check the size greater than 0
 
         char* unpacked_data = nullptr;
         int unpacked_data_size = -1;
         bdp->UnpackData(packet_to_send, packet_size, unpacked_data, unpacked_data_size);
 
-        QCOMPARE_EQ(unpacked_data_size, RawDataSize);
+        QVERIFY(unpacked_data_size == RawDataSize);
 
         // Convert char* to QString for comparison
         QString expectedString = QString::fromUtf8(RawData, RawDataSize);

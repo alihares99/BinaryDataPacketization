@@ -4,6 +4,11 @@ TARGET   = BinaryDataPackerLib
 TEMPLATE = lib
 CONFIG  += staticlib
 
+MOC_DIR     = build/moc
+OBJECTS_DIR = build/obj
+UI_DIR      = build/ui
+RCC_DIR     = build/
+
 SOURCES +=\
 	BinaryDataPacker.cpp \
 	HeaderBuilders/ConstHeader.cpp \
